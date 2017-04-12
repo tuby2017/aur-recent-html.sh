@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<style> tr:nth-of-type(even) {background:#E4EEFF;} 
+table {overflow-x:auto;width:100%;}
+th {background:#33AADD;color:white;border-bottom: 2px solid grey;width:auto;}
+td d {display:table;}
+a {background:#DCDAD5; padding: 0px 15px;
+	border-bottom: 2px solid grey; border-radius: 5px;}
+a:visited {color:#b9b5ab;}
+button {cursor: not-allowed;border: none; width: 30%;
+		margin: 6px;border-bottom: 2px solid grey; border-radius: 5px;}
+a:hover,button:hover {background: -moz-linear-gradient(top, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%);}
+a:active,button:active {background: -moz-linear-gradient(top, #e6f0a3 0%, #d2e638 50%, #c3d825 51%, #dbf043 100%);}
+</style>
+
+//<script src="/home/s/Public/mine/parse/clipboard.js-master/dist/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+<script type="text/javascript">
+var nameCell = document.querySelectorAll("tr td:first-of-type"),i;
+//nameCell.style.backgroundColor = "red";
+function setAttributes(el, attrs) {
+  for(var key in attrs) {
+    el.setAttribute(key, attrs[key]);
+  }
+}
+for (i = 0; i < nameCell.length; ++i) {
+	var cpy = document.createElement('button');	
+	setAttributes(cpy, {"class":"btn","data-clipboard-text":nameCell[i].textContent, "onlick":"#"});
+	cpy.textContent = "copy";
+	//var linkbtn = document.createElement('button');
+	//linkbtn.setAttribute('onlick',"#");
+
+	var dx = document.createElement('div');	
+	var aTag = document.createElement('a');
+	aTag.setAttribute('href',"https://aur.archlinux.org/packages/"+nameCell[i].textContent+"#metadata");
+	aTag.setAttribute('target',"_blank");
+	aTag.textContent = "link";
+	//var img = document.createElement('img');
+	//linkbtn.appendChild(aTag);	
+	dx.appendChild(cpy);
+	dx.appendChild(aTag);
+	nameCell[i].appendChild(dx);
+	//insertAfter(linkbtn, cpy);
+}
+	var btns = document.querySelectorAll('.btn');
+    var clipboard = new Clipboard(btns);
+</script>
