@@ -10,6 +10,8 @@ html table for from aur latest package update
 ##similar stuff:  aur rss, aurweb, arch offical repo interface
 
 __GOP__ variable need to change, if installed different location. Replace `$GOP/` in script.
+
+__style__ variable for html style and script. At script line 35 and 36 (head -#).
 ## js,css comment:
 2 flavor, fancy and -not files.
 - __fancy__ one combines copy js and link into one, but need to use vimlike browser plugin to perform task. I'm not sure how to fix it. Use bookmark.svg at __line 48__.
