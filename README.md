@@ -2,6 +2,7 @@
 html table for from aur latest package update
 ## used:
  ericchiang/pup, trentm/python-markdown2, zenorocha/clipboard.js (cdn default)
+ 
  first two avaiable in aur
 ## code comment:
  'https://forum.manjaro.org/t/go-bash-python-aur-parse/21434/2'
